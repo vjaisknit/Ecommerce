@@ -1,0 +1,8 @@
+*.xml
+*.CopyComplete
+*.lock
+*.dtbcache
+EcomAPI/EcomAPI/bin/Debug/netcoreapp3.0/appsettings.Development.json
+*.cache
+*.json
+EcomAPI/EcomAPI/obl/*

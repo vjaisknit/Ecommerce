@@ -2,18 +2,18 @@
     <div class="col-md-6">
         <h2 class="text-info">Create Product</h2>
         <div class="p-4 border rounded">
-            <form>
+            <form [formGroup] = "productForm" (ngSubmit)="SubmitForm()">
                 <div class="form-group">
                     <label for="productName">Product Name</label>
-                    <input type="text" id="productName" class="form-control">
+                    <input type="text" formControlName= "productName" id="productName" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="Price">Price</label>
-                    <input type="text" id="Price" class="form-control">
+                    <input type="text" id="Price" formControlName = "price" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="category">Category</label>
-                    <select class="form-control">
+                    <select class="form-control" formControlName="category">
                         <option selected value="">Select Category</option>
                         <option [value] = "cat.id" 
                         *ngFor= "let cat of categoryList">{{cat.categoryName}}</option>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group">
                     <label for="imageUrl">Image Url</label>
-                    <input type="text" id="imageUrl" class="form-control">
+                    <input type="text" id="imageUrl" formControlName= "imageUrl" class="form-control">
                 </div>
 
                 <button class="btn btn-success">Save</button>
@@ -30,4 +30,18 @@
             </form>
         </div>
     </div>
-</div>
+  <div class="col-md-6">
+  <div class="p-4">
+    <div class="card" style="width: 18rem;">
+        <img [src]="productForm.value.imageUrl" class="card-img-top" alt="No Image Selected">
+        <div class="card-body">
+          <h5 class="card-title">{{productForm.value.productName}}</h5>
+          <p class="card-text" *ngIf="productForm.value.price">
+               ₹ {{productForm.value.price  }}</p>
+         
+        </div>
+      </div>
+  </div>
+    </div>
+    </div>
+

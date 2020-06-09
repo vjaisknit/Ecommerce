@@ -6,12 +6,14 @@ import { NavComponent } from './nav/nav.component';
 import { ProductComponent } from './product/product.component';
 import { AppRouting } from './app.routing';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ProductCardComponent } from './product/product-card/product-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    ProductComponent
+    ProductComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
